@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dunea App</title>
+    <script>
+      // Global error overlay — catches module import errors, syntax errors,
+      // and any other errors that happen before React mounts.
+      // Must be a regular script (not module) to run before ES module evaluation.
+      (function () {
+        function showError(title, msg, stack) {
+          var el = document.getElementById('__error-overlay');
+          if (!el) {
+            el = document.createElement('div');
+            el.id = '__error-overlay';
+            document.body.appendChild(el);
+          }
+          var esc = function (s) { return s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/>/g,'&gt;'); };
+          el.innerHTML =
+            '<div style="position:fixed;inset:0;z-index:99999;background:#1a1a2e;color:#e0e0e0;' +
+            'font-family:SF Mono,Monaco,Consolas,monospace;padding:32px;overflow:auto;display:flex;flex-direction:column;gap:16px">' +
+            '<div style="display:flex;align-items:center;gap:12px">' +
+            '<span style="background:#e74c3c;color:white;font-weight:700;padding:4px 12px;border-radius:6px;font-size:13px">ERROR</span>' +
+            '<span style="font-size:16px;font-weight:600;color:#ff6b6b">' + esc(title) + '</span></div>' +
+            '<pre style="background:#16213e;border:1px solid #2a2a4a;border-radius:8px;padding:20px;margin:0;' +
+            'white-space:pre-wrap;word-break:break-word;font-size:14px;line-height:1.6;color:#ffd93d">' + esc(msg) + '</pre>' +
+            (stack ? '<details style="margin-top:8px"><summary style="cursor:pointer;color:#888;font-size:13px">Stack trace</summary>' +
+            '<pre style="background:#16213e;border:1px solid #2a2a4a;border-radius:8px;padding:16px;margin-top:8px;' +
+            'white-space:pre-wrap;word-break:break-word;font-size:12px;line-height:1.5;color:#aaa">' + esc(stack) + '</pre></details>' : '') +
+            '</div>';
+        }
+        window.addEventListener('error', function (e) {
+          showError(
+            e.message || 'Runtime Error',
+            e.filename ? e.message + '\n\nat ' + e.filename + ':' + e.lineno + ':' + e.colno : e.message,
+            e.error && e.error.stack ? e.error.stack : ''
+          );
+        });
+        window.addEventListener('unhandledrejection', function (e) {
+          var err = e.reason;
+          var msg = err instanceof Error ? err.message : String(err);
+          var stack = err instanceof Error ? err.stack : '';
+          showError('Unhandled Promise Rejection', msg, stack || '');
+        });
+        window.__showError = showError;
+      })();
+    </script>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.tsx"></script>
+  </body>
+</html>

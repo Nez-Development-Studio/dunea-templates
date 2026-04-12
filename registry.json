@@ -1,0 +1,60 @@
+{
+  "version": 1,
+  "updatedAt": "2026-04-12T00:00:00Z",
+  "official": [
+    {
+      "manifest": {
+        "id": "fullstack",
+        "name": "Full-Stack App",
+        "description": "React + FastAPI + MongoDB starter template",
+        "category": "fullstack",
+        "version": "1.0.0",
+        "author": "Nez Development Studio",
+        "tags": ["react", "fastapi", "mongodb", "vite", "tailwind"],
+        "source": "official",
+        "includes": [
+          "frontend/src",
+          "frontend/index.html",
+          "backend/main.py",
+          "backend/config.py",
+          "backend/database.py",
+          "backend/routes",
+          "BASE.md",
+          "start.sh",
+          "Dockerfile"
+        ]
+      },
+      "location": {
+        "owner": "Nez-Development-Studio",
+        "repo": "dunea-templates",
+        "ref": "main",
+        "path": "fullstack"
+      }
+    },
+    {
+      "manifest": {
+        "id": "landing",
+        "name": "Landing Page",
+        "description": "React landing page with Tailwind CSS",
+        "category": "landing",
+        "version": "1.0.0",
+        "author": "Nez Development Studio",
+        "tags": ["react", "landing", "vite", "tailwind"],
+        "source": "official",
+        "includes": [
+          "frontend/src",
+          "frontend/index.html",
+          "BASE.md",
+          "start.sh"
+        ]
+      },
+      "location": {
+        "owner": "Nez-Development-Studio",
+        "repo": "dunea-templates",
+        "ref": "main",
+        "path": "landing"
+      }
+    }
+  ],
+  "marketplace": []
+}
