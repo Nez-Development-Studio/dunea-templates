@@ -3,7 +3,7 @@
   "name": "Full-Stack App",
   "description": "React + FastAPI + MongoDB starter template. Includes Vite, Tailwind CSS, shadcn/ui components, and a FastAPI backend with PyMongo.",
   "category": "fullstack",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "author": "Nez Development Studio",
   "tags": [
     "react",
@@ -16,16 +16,13 @@
     "python"
   ],
   "source": "official",
-  "previewUrl": "https://dunea.dev/templates/fullstack/preview.png",
   "includes": [
-    "frontend/src",
-    "frontend/index.html",
-    "backend/main.py",
-    "backend/config.py",
-    "backend/database.py",
-    "backend/routes",
+    "frontend",
+    "backend",
+    "skills",
     "BASE.md",
     "start.sh",
-    "Dockerfile"
+    "Dockerfile.deploy",
+    ".gitignore"
   ]
 }

@@ -1,0 +1,25 @@
+{
+  "id": "landing",
+  "name": "Landing Page",
+  "description": "Frontend-only landing page template. React + Vite + Tailwind CSS + shadcn/ui. Forms submit to Dunea Form Service — no backend needed.",
+  "category": "landing",
+  "version": "1.0.0",
+  "author": "Nez Development Studio",
+  "tags": [
+    "react",
+    "landing",
+    "vite",
+    "tailwind",
+    "shadcn",
+    "typescript",
+    "frontend-only"
+  ],
+  "source": "official",
+  "includes": [
+    "frontend",
+    "skills",
+    "BASE.md",
+    "start.sh",
+    ".gitignore"
+  ]
+}

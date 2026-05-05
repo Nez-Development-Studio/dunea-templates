@@ -1,6 +1,6 @@
 {
   "version": 1,
-  "updatedAt": "2026-04-12T00:00:00Z",
+  "updatedAt": "2025-05-05T00:00:00Z",
   "official": [
     {
       "manifest": {
@@ -8,20 +8,18 @@
         "name": "Full-Stack App",
         "description": "React + FastAPI + MongoDB starter template",
         "category": "fullstack",
-        "version": "1.0.0",
+        "version": "1.1.0",
         "author": "Nez Development Studio",
         "tags": ["react", "fastapi", "mongodb", "vite", "tailwind"],
         "source": "official",
         "includes": [
-          "frontend/src",
-          "frontend/index.html",
-          "backend/main.py",
-          "backend/config.py",
-          "backend/database.py",
-          "backend/routes",
+          "frontend",
+          "backend",
+          "skills",
           "BASE.md",
           "start.sh",
-          "Dockerfile"
+          "Dockerfile.deploy",
+          ".gitignore"
         ]
       },
       "location": {
@@ -35,17 +33,18 @@
       "manifest": {
         "id": "landing",
         "name": "Landing Page",
-        "description": "React landing page with Tailwind CSS",
+        "description": "Frontend-only landing page with form service integration",
         "category": "landing",
         "version": "1.0.0",
         "author": "Nez Development Studio",
-        "tags": ["react", "landing", "vite", "tailwind"],
+        "tags": ["react", "landing", "vite", "tailwind", "frontend-only"],
         "source": "official",
         "includes": [
-          "frontend/src",
-          "frontend/index.html",
+          "frontend",
+          "skills",
           "BASE.md",
-          "start.sh"
+          "start.sh",
+          ".gitignore"
         ]
       },
       "location": {
